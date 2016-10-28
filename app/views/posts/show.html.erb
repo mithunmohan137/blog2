@@ -1,17 +1,54 @@
 <p id="notice"><%= notice %></p>
 
+<head>
+  <title>Bootstrap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 100%;
+      margin: auto;
+  }
+  </style>
+</head>
+<div id="mycarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="item active" style="height:200px">
+        <img src="http://www.freewebheaders.com/wordpress/wp-content/gallery/high-tech-designs/smart-tech-blue-abstract-design-website-header.jpg" alt="" class="img-responsive">
+           <div class="carousel-caption">
+           <h1 align="left" style="color:#C0C0C0"><i><strong>Tech-Blog</strong></i></h1>
+           <h5 align="right"><i><srong>Necessity is the mother of Inventions...</strong></i></h5>
+           </div>
+        </div>
+  </div>
+</div>
+<body style="background-image:url(http://previews.123rf.com/images/yewkeo/yewkeo1008/yewkeo100800001/7551919-Abstract-Technology-internet-connection-background-Stock-Vector.jpg)" >
 <%= render @post %>
-<h2>Comments</h2>
 <div id="comments">
+  <div class="container">
+  <h3><strong><i>Comments</i></strong></h3>
   <%= render @post.comments.reverse %>
+  </div>
 </div>
 <%= form_for [@post, Comment.new], remote: true do |f| %>
-    <p>
-    <%= f.label :body, "New Comment" %><br/>
+    <div class="container">
+    <p><strong>
+    <font size="3">
+    <%= f.label :body, "New Comment" %><br/></strong>
+  </font>
     <%= f.text_area :body %>
     </p>
     <p><%= f.submit "Add Comment"%></p>
+  </div>
 <% end %>
-
+<div class="container">
+<strong>
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+</strong>
+</div>
+</body>

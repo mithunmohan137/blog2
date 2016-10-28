@@ -1,4 +1,8 @@
 <%= div_for @post do%>
-<h2><%= h(@post.title)%></h2>
+<div class="container">
+<h2><strong><%= h(@post.title)%></strong></h2>
+<pre style="width:50%">
 <%= simple_format h(@post.body) %>
+</pre>
+</div>
 <% end %>

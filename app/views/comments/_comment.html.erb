@@ -1,10 +1,10 @@
 <%= div_for comment do %>
-<p><strong>Posted <%=time_ago_in_words(comment.created_at)%> ago</strong>
-<table>
-    <tr>
-  <td><%= h(comment.body) %></td>
-  <td><%= link_to 'Edit', edit_post_comment_path(comment.post, comment) %></td>
-  <td><%= link_to 'Destroy', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-</tr>
-</table></p>
-<%end %>
+  <p><strong>
+    Posted <%= time_ago_in_words(comment.created_at) %>
+    </strong>
+    <br />
+    <pre style="width:50%">
+    <%= h(comment.body) %>
+    </pre>
+  </p>
+<% end %>
